@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Syntax - My Language</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Documentation</h2>
+            <nav>
+                <ul>
+                    <li><a href="#package-definition">Package Definition</a></li>
+                    <li><a href="#imports">Imports</a></li>
+                    <li><a href="#basic-types">Basic Types</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header>
+                <h1>Basic Syntax</h1>
+            </header>
+
+            <section id="package-definition">
+                <h2>Package Definition</h2>
+                <p>In My Language, every source file must begin with a package definition. This helps in organizing your code into namespaces.</p>
+                <pre><code>package com.example.mypackage</code></pre>
+                <p>Packages can be nested. Here is an example:</p>
+                <pre><code>package com.example.mypackage.subpackage</code></pre>
+            </section>
+
+            <section id="imports">
+                <h2>Imports</h2>
+                <p>To use functions or classes from other packages, you need to import them.</p>
+                <pre><code>import com.example.mypackage.SomeClass</code></pre>
+                <p>You can also import all classes from a package:</p>
+                <pre><code>import com.example.mypackage.*</code></pre>
+            </section>
+
+            <section id="basic-types">
+                <h2>Basic Types</h2>
+                <p>My Language has several basic types. Here are a few examples:</p>
+                <pre><code>val x: Int = 10</code></pre>
+                <pre><code>val y: String = "Hello, world!"</code></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 My Language Documentation</p>
+        </footer>
+    </div>
+</body>
+</html>
