@@ -21,6 +21,7 @@ body {
     padding: 20px;
     height: 100vh; /* Full height */
     position: fixed; /* Fixes the sidebar in place */
+    overflow-y: auto; /* Scroll if content overflows */
 }
 
 .sidebar h2 {
@@ -30,19 +31,41 @@ body {
 .sidebar nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar nav ul li {
     margin: 10px 0;
 }
 
-.sidebar nav ul li a {
+.sidebar nav ul li a, .submenu-toggle {
     color: white;
     text-decoration: none;
+    display: block;
+    padding: 10px;
+    background: #003399; /* Slightly darker for main links */
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor for clickable items */
 }
 
-.sidebar nav ul li a:hover {
-    text-decoration: underline;
+.sidebar nav ul li a:hover, .submenu-toggle:hover {
+    background: #002280; /* Darker on hover */
+}
+
+.submenu {
+    display: none; /* Hidden by default */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px; /* Indent submenu */
+}
+
+.submenu li a {
+    background: #002280; /* Slightly different background for submenus */
+}
+
+.submenu li a:hover {
+    background: #001960; /* Darker on hover */
 }
 
 .content {
