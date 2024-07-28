@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const submenu = this.nextElementSibling;
             const arrow = this.querySelector('.arrow');
+
             if (submenu.style.display === 'block') {
                 submenu.style.display = 'none';
-                arrow.classList.remove('submenu-open');
+                arrow.style.transform = 'rotate(0deg)'; // Rotate back to down
             } else {
                 submenu.style.display = 'block';
-                arrow.classList.add('submenu-open');
+                arrow.style.transform = 'rotate(180deg)'; // Rotate to up
             }
         });
     });

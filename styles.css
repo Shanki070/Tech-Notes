@@ -71,14 +71,14 @@ body {
 
 .arrow {
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
     font-size: 12px;
     vertical-align: middle;
     margin-left: 5px;
 }
 
 .submenu-open .arrow {
-    transform: rotate(180deg); /* Up arrow */
+    transform: rotate(180deg); /* Rotate arrow to point up */
 }
 
 .content {
