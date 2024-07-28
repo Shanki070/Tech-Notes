@@ -46,6 +46,7 @@ body {
     background: #003399; /* Slightly darker for main links */
     border-radius: 4px;
     cursor: pointer; /* Pointer cursor for clickable items */
+    position: relative; /* For positioning the arrow */
 }
 
 .sidebar nav ul li a:hover, .submenu-toggle:hover {
@@ -66,6 +67,18 @@ body {
 
 .submenu li a:hover {
     background: #001960; /* Darker on hover */
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.submenu-open .arrow {
+    transform: rotate(180deg); /* Up arrow */
 }
 
 .content {
