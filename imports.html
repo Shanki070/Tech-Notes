@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation Home - My Language</title>
+    <title>Imports - My Language</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
             <h2>Documentation</h2>
             <nav>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="package-definition.html">Package Definition</a></li>
                     <li>
                         <button class="submenu-toggle">
@@ -29,11 +30,21 @@
 
         <main class="content">
             <header>
-                <h1>Welcome to My Language Documentation</h1>
+                <h1>Imports</h1>
             </header>
 
             <section>
-                <p>This is the main page of the documentation. Navigate using the sidebar to explore various sections.</p>
+                <h2>Imports</h2>
+                <p>To use functions or classes from other packages, you need to import them.</p>
+                <pre><code>import com.example.mypackage.SomeClass</code></pre>
+                <p>You can also import all classes from a package:</p>
+                <pre><code>import com.example.mypackage.*</code></pre>
+            </section>
+
+            <section id="advanced-imports">
+                <h2>Advanced Imports</h2>
+                <p>This section covers advanced import techniques.</p>
+                <pre><code>import com.example.advanced.AdvancedClass</code></pre>
             </section>
         </main>
 
