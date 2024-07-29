@@ -59,6 +59,7 @@ aside ul li {
 aside ul li ul {
     margin-top: 5px;
     padding-left: 15px;
+    display: none; /* Hide submenus by default */
 }
 
 aside ul li ul li {
@@ -68,6 +69,9 @@ aside ul li ul li {
 aside ul li a {
     text-decoration: none;
     color: #333; /* Dark gray text for links */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 aside ul li a:hover {
@@ -99,4 +103,12 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.arrow {
+    margin-left: auto;
+}
+
+.arrow.rotate {
+    transform: rotate(90deg);
 }

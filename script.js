@@ -28,4 +28,15 @@ window.onload = function() {
             loadHTML('main-content', filePath);
         });
     });
+
+    // Add event listeners to submenu toggles
+    document.querySelectorAll('.has-submenu > a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const submenu = this.nextElementSibling;
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            const arrow = this.querySelector('.arrow');
+            arrow.classList.toggle('rotate');
+        });
+    });
 };
