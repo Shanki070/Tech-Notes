@@ -15,6 +15,16 @@ function loadHTML(elementId, filePath) {
         });
 }
 
+// Function to close all submenus
+function closeAllSubmenus() {
+    document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.display = 'none';
+    });
+    document.querySelectorAll('.arrow').forEach(arrow => {
+        arrow.classList.remove('rotate');
+    });
+}
+
 // Load navigation and footer
 window.onload = function() {
     loadHTML('nav-placeholder', 'nav.html');
@@ -26,6 +36,7 @@ window.onload = function() {
             event.preventDefault();
             const filePath = this.getAttribute('href');
             loadHTML('main-content', filePath);
+            closeAllSubmenus();
         });
     });
 
@@ -34,9 +45,13 @@ window.onload = function() {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const submenu = this.nextElementSibling;
-            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-            const arrow = this.querySelector('.arrow');
-            arrow.classList.toggle('rotate');
+            const isVisible = submenu.style.display === 'block';
+            closeAllSubmenus();
+            if (!isVisible) {
+                submenu.style.display = 'block';
+                const arrow = this.querySelector('.arrow');
+                arrow.classList.add('rotate');
+            }
         });
     });
 };
