@@ -19,4 +19,13 @@ function loadHTML(elementId, filePath) {
 window.onload = function() {
     loadHTML('nav-placeholder', 'nav.html');
     loadHTML('footer-placeholder', 'footer.html');
+
+    // Add event listeners to menu links after loading the navigation
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const filePath = this.getAttribute('href');
+            loadHTML('main-content', filePath);
+        });
+    });
 };
