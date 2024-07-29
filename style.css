@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5; /* Off-white background */
+    color: #333; /* Dark gray text */
 }
 
 header {
@@ -41,6 +42,9 @@ header nav ul li a {
 
 aside {
     width: 250px;
+    background-color: #e0e0e0; /* Light gray background for sidebar */
+    padding: 15px;
+    border-radius: 5px;
 }
 
 aside ul {
@@ -63,11 +67,12 @@ aside ul li ul li {
 
 aside ul li a {
     text-decoration: none;
-    color: #333;
+    color: #333; /* Dark gray text for links */
 }
 
 aside ul li a:hover {
     text-decoration: underline;
+    color: #007BFF; /* Blue accent color for hover */
 }
 
 main {
@@ -76,6 +81,14 @@ main {
     background-color: #ffffff; /* White background for main content */
     border: 1px solid #e0e0e0; /* Light border for main content */
     border-radius: 5px;
+}
+
+main h2 {
+    color: #444; /* Slightly lighter dark gray for headings */
+}
+
+main p {
+    line-height: 1.6; /* Improved readability with increased line-height */
 }
 
 footer {
