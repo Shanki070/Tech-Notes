@@ -31,27 +31,28 @@ window.onload = function() {
     loadHTML('footer-placeholder', 'footer.html');
 
     // Add event listeners to menu links after loading the navigation
-    document.querySelectorAll('.menu-link').forEach(link => {
-        link.addEventListener('click', function(event) {
+    document.addEventListener('click', function(event) {
+        const link = event.target.closest('.menu-link');
+        if (link) {
             event.preventDefault();
-            const filePath = this.getAttribute('href');
+            const filePath = link.getAttribute('href');
             loadHTML('main-content', filePath);
-            closeAllSubmenus();
-        });
-    });
 
-    // Add event listeners to submenu toggles
-    document.querySelectorAll('.has-submenu > a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const submenu = this.nextElementSibling;
-            const isVisible = submenu.style.display === 'block';
+            // Close all submenus
             closeAllSubmenus();
-            if (!isVisible) {
-                submenu.style.display = 'block';
-                const arrow = this.querySelector('.arrow');
-                arrow.classList.add('rotate');
+
+            // Handle submenu visibility if the clicked link is a parent of a submenu
+            const parent = link.parentElement;
+            if (parent.classList.contains('has-submenu')) {
+                const submenu = parent.querySelector('.submenu');
+                if (submenu.style.display === 'block') {
+                    submenu.style.display = 'none';
+                } else {
+                    submenu.style.display = 'block';
+                    const arrow = parent.querySelector('.arrow');
+                    arrow.classList.toggle('rotate');
+                }
             }
-        });
+        }
     });
 };
